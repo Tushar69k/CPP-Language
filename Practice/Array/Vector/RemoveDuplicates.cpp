@@ -17,23 +17,27 @@ void Remove(vector<int>& v) {
             }
         }
     }
+
+    cout << "Vector after Removing Duplicate Elements :: " << endl;
+    for (int i = 0; i < v.size(); i++) {
+        cout << " | " << v[i];
+    }
+    cout << " | " << endl;
 }
 
+
+void GetVector(vector<int>& v) {
+    cout << "\nElements in Vector Are :: \n";
+    for (int i = 0; i < v.size(); i++) {
+        cout << " | " << v[i];
+    }
+    cout << " | " << endl;
+}
 
 
 int main() {
     vector<int> v = { 0,0,1,1,1,2,2,3,3,4 };
-
-    for (int i = 0; i < v.size(); i++) {
-        cout << v[i] << " | ";
-    }
-
+    GetVector(v);
     Remove(v);
-
-    cout << endl;
-    for (int i = 0; i < v.size(); i++) {
-        cout << v[i] << " | ";
-    }
-
     return 0;
 }
