@@ -20,27 +20,24 @@ void Getarr(int* arr , int size) {
     cout << " | " << endl;
 }
 
-// 4 7 1 2 6 
-// 
-void  BubbleSort(int* arr , int size) {
+void SelectionSort(int* arr , int size) {
     for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - 1 - i; j++) {
-            if (arr[j] > arr[j + 1]) {
+        for (int j = i + 1; j < size; j++) {
+            if (arr[i] > arr[j]) {
                 int temp;
-                temp = arr[j + 1];
-                arr[j + 1] = arr[j];
+                temp = arr[i];
+                arr[i] = arr[j];
                 arr[j] = temp;
             }
         }
     }
 
-    cout << "\nBubble Sort :: \n";
+    cout << "\nSelection Sort :: \n";
     for (int i = 0; i < size; i++) {
         cout << " | " << arr[i];
     }
     cout << " | " << endl;
 }
-
 
 int main() {
 
@@ -51,6 +48,7 @@ int main() {
     int arr[size];
     Setarr(arr , size);
     Getarr(arr , size);
-    BubbleSort(arr , size);
+    SelectionSort(arr , size);
+
     return 0;
 }

@@ -17,28 +17,8 @@ void Getarr(int* arr , int size) {
     for (int i = 0; i < size; i++) {
         cout << " | " << arr[i];
     }
-    cout << " | " << endl;
+    cout << " | ";
 }
-
-void SelectionSort(int* arr , int size) {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = i + 1; j < size; j++) {
-            if (arr[i] > arr[j]) {
-                int temp;
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-
-    cout << "\nSelection Sort :: \n";
-    for (int i = 0; i < size; i++) {
-        cout << " | " << arr[i];
-    }
-    cout << " | " << endl;
-}
-
 
 int main() {
 
@@ -49,7 +29,18 @@ int main() {
     int arr[size];
     Setarr(arr , size);
     Getarr(arr , size);
-    SelectionSort(arr , size);
+
+
+    int max = 0;
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+
+    }
+    cout << "\nMax : " << max;
+
 
     return 0;
 }
