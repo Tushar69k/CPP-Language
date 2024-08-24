@@ -31,7 +31,7 @@ int main() {
         arr[i] = arr[i + 1];
     }
 
-    cout << "\nOur Array after Insertion is :: " << endl;
+    cout << "\nOur Array after Deletion is :: " << endl;
     for (int i = 0; i < og; i++) {
         cout << " | " << arr[i];
     }
