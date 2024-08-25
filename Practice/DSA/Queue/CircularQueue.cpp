@@ -1,23 +1,21 @@
 #include<iostream>
 using namespace std;
 
-class Queue {
+class CircularQueue {
     int* arr;
     int size;
     int front , rear;
 
 public:
 
-    Queue() { }
-
-    Queue(int s) {
+    CircularQueue(int s) {
         size = s;
         arr = new int[size];
         front = -1;
         rear = -1;
     }
 
-    ~Queue() {
+    ~CircularQueue() {
         delete[ ] arr;
         arr = NULL;
     }
@@ -29,9 +27,11 @@ public:
     int isFull();
     void display();
 
+
 };
 
-void Queue::User() {
+
+void CircularQueue::User() {
     cout << "\n0. For User Manual !" << endl;
     cout << "1. enqueue() : To add element at end of the Queue." << endl;
     cout << "2. dequeue() : To Remove Front Element in Queue." << endl;
@@ -39,10 +39,9 @@ void Queue::User() {
     cout << "4. isFull() : To check whwther a Queue is Full or not." << endl;
     cout << "5. display : To display all elements in Queue" << endl;
     cout << "6. Exit Program!" << endl;
-
 }
 
-void Queue::enqueue(int value) {
+void CircularQueue::enqueue(int value) {
     if (isFull()) {
         cout << "Queue is Full !" << endl;
     }
@@ -51,18 +50,19 @@ void Queue::enqueue(int value) {
         arr[rear] = value;
     }
     else {
-        rear++;
+        rear = (rear + 1) % size;
         arr[rear] = value;
     }
 
 }
 
-void Queue::dequeue() {
+
+void CircularQueue::dequeue() {
     if (isEmpty()) {
         cout << "Queue is Empty! " << endl;
     }
     else if (front == rear) {
-        front = rear = -1;
+        front = (front + 1) % size;
     }
     else {
         size++;
@@ -70,22 +70,25 @@ void Queue::dequeue() {
     }
 }
 
-int Queue::isEmpty() {
+
+int CircularQueue::isEmpty() {
     if (front == -1 && rear == -1)
         return true;
     else
         return false;
 }
 
-int Queue::isFull() {
-    if (rear == size - 1) {
+
+int CircularQueue::isFull() {
+    if ((rear + 1) % size == front) {
         return true;
     }
     else
         return false;
 }
 
-void Queue::display() {
+
+void CircularQueue::display() {
     if (isEmpty()) {
         cout << "Queue Underflow ! " << endl;
     }
@@ -98,19 +101,17 @@ void Queue::display() {
     }
 }
 
-
-
 int main() {
     int num;
     int size;
     int choice = 0;
 
-    cout << "\nProgram for Implementation of Queue using Arrays ::" << endl;
+    cout << "\nProgram for Implementation of Circular Queue using Arrays ::" << endl;
 
     cout << "\nEnter Size of Queue : ";
     cin >> size;
 
-    Queue s(size);
+    CircularQueue s(size);
 
     cout << "\n0. For User Manual !" << endl;
     cout << "1. enqueue() : To add element at end of the Queue." << endl;
@@ -119,7 +120,6 @@ int main() {
     cout << "4. isFull() : To check whwther a Queue is Full or not." << endl;
     cout << "5. display : To display all elements in Queue" << endl;
     cout << "6. Exit Program!" << endl;
-
 
     do {
 
