@@ -2,15 +2,8 @@
 using namespace std;
 
 
-int main() {
 
-    int[ ][ ] Matrix = SetMatrix();
-    GetMatrix(Matrix);
-    Find(Matrix);
-    return 0;
-}
-
-int[ ][ ] SetMatrix() {
+void SetMatrix() {
 
     cout << " Enter No. of Rows : " << endl;
     int rows;
@@ -19,7 +12,7 @@ int[ ][ ] SetMatrix() {
     int columns;
     cin >> columns;
 
-    int[ ][ ] Matrix = new int[rows][columns];
+    int Matrix[rows][columns];
 
     cout << "\nEnter Elements for Matrix (" << rows << " X " << columns << ") " << endl;
 
@@ -29,10 +22,9 @@ int[ ][ ] SetMatrix() {
             cin >> Matrix[i][j];
         }
     }
-    return Matrix;
 }
 
-void GetMatrix(int[ ][ ] Matrix) {
+void GetMatrix() {
     cout << "\nElements in Matrix Are :: " << endl;
     for (int i = 0; i < Matrix.length; i++) {
         cout << " |  ";
@@ -60,4 +52,12 @@ void Find(int[ ][ ] Matrix) {
             }
         }
     }
+}
+
+int main() {
+
+    SetMatrix();
+    // GetMatrix(Matrix);
+    // Find(Matrix);
+    return 0;
 }
