@@ -208,7 +208,7 @@ int main() {
                 cout << "peek : To check particular element of given index" << endl;
                 cout << "Enter index : ";
                 cin >> index;
-                s.peek(index);
+                cout << "Element at " << index << " : " << s.peek(index);
                 break;
             }
 
