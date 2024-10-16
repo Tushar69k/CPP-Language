@@ -11,6 +11,8 @@ public:
     Queue() { }
 
     Queue(int s) {
+
+
         size = s;
         arr = new int[size];
         front = -1;
