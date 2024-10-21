@@ -24,7 +24,7 @@ void Getarr(int arr[ ] , int size) {
 void InsertionSort(int arr[ ] , int size) {
     for (int i = 0; i < size; i++) {
         int value = arr[i];
-        index = i;
+        int  index = i;
         while (index > 0 && arr[index - 1] > value) {
             arr[index] = arr[index - 1];
             index--;
@@ -34,7 +34,7 @@ void InsertionSort(int arr[ ] , int size) {
 }
 
 
-}
+
 
 int main() {
 
