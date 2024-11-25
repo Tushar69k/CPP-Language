@@ -29,6 +29,7 @@ void display(Node* head) {
     cout << "NULL" << endl;
 }
 
+
 void insertAtTail(Node*& head , int val) {
     Node* new_node = new Node(val);
     Node* temp = head;
@@ -72,6 +73,7 @@ void updateAtPosition(Node*& head , int val , int pos) {
 
 }
 
+
 void deleteAtHead(Node*& head) {
     Node* temp = head;
 
@@ -94,6 +96,7 @@ void deleteAtTail(Node*& head) {
     free(temp);
 
 }
+
 
 void deleteAtPosition(Node*& head , int pos) {
 
