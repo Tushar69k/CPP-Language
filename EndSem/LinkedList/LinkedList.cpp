@@ -13,6 +13,10 @@ public:
 
 };
 
+bool isEmpty() {
+    return (head == NULL);
+}
+
 void insertAtHead(Node*& head , int data) {
     Node* new_node = new Node(data);
     if (!isEmpty()) {
@@ -21,9 +25,6 @@ void insertAtHead(Node*& head , int data) {
     head = new_node;
 }
 
-bool isEmpty() {
-    return (head == NULL);
-}
 
 void display(Node* head) {
     Node* temp = head;
