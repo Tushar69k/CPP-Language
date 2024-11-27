@@ -90,3 +90,6 @@ int min(Node* root) {
     return temp->data;
 
 }
+
+
+//  TODO : Ad main() function
