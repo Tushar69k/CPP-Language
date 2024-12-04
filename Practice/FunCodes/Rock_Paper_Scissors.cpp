@@ -1,4 +1,6 @@
 #include<iostream>
+#include<time.h>
+
 using namespace std;
 
 int main() {
@@ -26,20 +28,19 @@ int main() {
             cout << " GAME ENDED ";
         }
 
-        Random random = new Random();
-        int ComInput = random.nextInt(1 , 4);
+        int ComInput = rand() % 3;
 
         if (UserInput != 4) {
             if (ComInput == 1) {
-                cout << "( Computer Selects Rock )";
+                cout << "( Computer Selects Rock )  ";
             }
 
             if (ComInput == 2) {
-                cout << "( Computer Selects Paper )";
+                cout << "( Computer Selects Paper )  ";
             }
 
             if (ComInput == 3) {
-                cout << "( Computer Selects Scissors )";
+                cout << "( Computer Selects Scissors )  ";
             }
         }
 
@@ -55,7 +56,7 @@ int main() {
             cout << " Computer Wins ! ";
         }
         if (UserInput != 4) {
-            cout << "\n Wanna Try again ? If No Enter 4 ";
+            cout << "\nWanna Try again ? If No Enter 4 ";
         }
     } while (UserInput != 4);
 
